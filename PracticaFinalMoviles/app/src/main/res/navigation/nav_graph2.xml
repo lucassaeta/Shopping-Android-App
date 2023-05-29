@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph3"
+    app:startDestination="@+id/ProductosFragment">
+
+    <fragment
+        android:id="@+id/ProductosFragment"
+        android:name="com.example.practicafinalmoviles.ProductosFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_products">
+
+        <action
+            android:id="@+id/action_ProductosFragment_to_CarritoFragment"
+            app:destination="@+id/CarritoFragment" />
+        <argument
+            android:name="Uid"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_ProductosFragment_to_detalleFragment"
+            app:destination="@id/DetalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CarritoFragment"
+        android:name="com.example.practicafinalmoviles.CarritoFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_shopping_cart">
+
+        <action
+            android:id="@+id/action_CarritoFragment_to_ProductosFragment"
+            app:destination="@+id/ProductosFragment" />
+        <argument
+            android:name="productId"
+            app:argType="string" />
+        <argument
+            android:name="productName"
+            app:argType="string" />
+        <argument
+            android:name="productDescription"
+            app:argType="string" />
+        <argument
+            android:name="productPrice"
+            app:argType="string" />
+        <argument
+            android:name="productRating"
+            app:argType="string" />
+        <argument
+            android:name="productStock"
+            app:argType="string" />
+        <argument
+            android:name="productBrand"
+            app:argType="string" />
+        <argument
+            android:name="productImage"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetalleFragment"
+        android:name="com.example.practicafinalmoviles.DetalleFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detalleFragment_to_ProductosFragment"
+            app:destination="@id/ProductosFragment" />
+        <argument
+            android:name="productId"
+            app:argType="string" />
+        <argument android:name="productName"
+            app:argType="string" />
+        <argument android:name="productDescription"
+            app:argType="string" />
+        <argument android:name="productPrice"
+            app:argType="string" />
+        <argument android:name="productRating"
+            app:argType="string" />
+        <argument android:name="productStock"
+            app:argType="string" />
+        <argument android:name="productBrand"
+            app:argType="string" />
+        <argument
+            android:name="pImage"
+            app:argType="string" />
+    </fragment>
+</navigation>
